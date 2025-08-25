@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles4.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Sleep Disorder Classification</h2>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <div class="result-box">
+            <h3>Your Prediction:</h3>
+            <p class="prediction">{{ prediction }}</p>
+            {% if prediction == "Insomnia" %}
+                <h4>Recommendations for Insomnia:</h4>
+                <h4>What is Insomnia?</h4>
+                <p>Insomnia is a sleep disorder characterized by difficulty falling asleep, staying asleep, or waking up too early, leading to poor-quality rest and daytime fatigue.</p>
+                <ul>
+                    <li>Lifestyle Changes: Maintain a sleep schedule, limit caffeine, avoid screens before bed.</li>
+                    <li>Cognitive Behavioral Therapy (CBT-I) – Most effective long-term treatment.</li>
+                    <li>Medications (short-term use only, e.g., melatonin, prescription sleep aids).</li>
+                </ul>
+            {% elif prediction == "Sleep Apnea" %}
+                <h4>Recommendations For Sleep Apnea:</h4>
+                <h4>What is Sleep Apnea?</h4>
+                <p>Sleep apnea is a serious sleep disorder where breathing repeatedly stops and starts during sleep. </p>
+                <ul>
+                    <li><b>Lifestyle Changes</b></li>
+                    <li>Lose weight (if overweight) : Excess weight can worsen airway obstruction.</li>
+                    <li>Avoid alcohol and sedatives : They relax throat muscles, increasing apnea episodes.</li>
+                    <li>Sleep on your side:Prevents the tongue from blocking the throat.</li>
+                    <li>Quit smoking :Smoking increases inflammation and fluid retention in the airway.</li>
+                </ul>
+            {% else %}
+                <h4>Recommendations:</h4>
+                <ul>
+                    <li>Maintain your current healthy habits</li>
+                    <li>Continue monitoring your sleep quality</li>
+                    <li>Regular exercise helps maintain good sleep</li>
+                </ul>
+            {% endif %}
+
+            <a href="{{ url_for('predict') }}" class="button">Make Another Prediction</a>
+            
+        </div>
+    </div>
+</body>
+</html>

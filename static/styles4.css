@@ -1,0 +1,134 @@
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c4a261;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url("image2.jpeg") no-repeat center center/cover;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar h1 {
+    margin: 0;
+    padding-right: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.nav-links {
+    padding-right: 20px;
+    margin-top: 3px;
+}
+
+/* Navigation Links */
+.nav-links a, .logout-btn {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-left: 10px;
+    margin-top: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Form Container */
+.container {
+    width: 50%;
+    background-color: #d4af72;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+h2 {
+    color:white;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels */
+label {
+    display: inline-block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+/* Radio Button Styling */
+.radio-group {
+    display: inline-flex;
+    align-items:left; /* Aligns radio buttons vertically with the label */
+    gap: 100px; /* Adds some space between radio buttons */
+    margin-left: 10px; /* Moves the radio buttons slightly away from the "Gender" text */
+}
+
+
+
+/* Submit Button */
+.button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #444;
+}
+.result-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.result-box h3 {
+    color: #2c3e50;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}

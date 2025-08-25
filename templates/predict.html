@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction - Sleep Disorder Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles4.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>Sleep Disorder Classification</h2>
+        <div class="nav-links">
+            <h1>Welcome, {{ session.user.username }}!</h1>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Your Sleep Health Prediction Form</h2>
+
+        <form action="{{ url_for('predict') }}" method="POST">
+            
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+
+            <label>Age:</label>
+            <input type="number" name="age" min="1" max="120" required>
+
+            <label>Occupation:</label>
+            <select name="occupation" required>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Lawyer">Lawyer</option>
+                <option value="Accountant">Accountant</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Scientist">Scientist</option>
+                <option value="Salesperson">Salesperson</option>
+            </select>
+
+            <label>Sleep Duration (hours):</label>
+            <input type="number" name="sleep_duration" step="0.1" min="0" max="24" required>
+
+            <label>Quality of Sleep (1-10):</label>
+            <input type="number" name="quality_of_sleep" min="1" max="10" required>
+
+            <label>Physical Activity Level (minutes/day):</label>
+            <input type="number" name="physical_activity" min="0" required>
+
+            <label>
+                Stress Level:
+                <a href="https://nowcalculator.com/stress-level-calculator/""
+                   target="_blank" 
+                   style="color: blue; text-decoration: underline;">
+                    (Calculate stress)
+                </a>
+            </label>
+            <input type="number" name="stress_level" required>
+
+            <label>
+                BMI Category:
+                <a href="https://www.calculator.net/bmi-calculator.html?cage=15&csex=f&cheightfeet=5&cheightinch=10&cpound=55&cheightmeter=180&ckg=65&printit=0&ctype=standard&x=Calculate" 
+                   target="_blank" 
+                   style="color: blue; text-decoration: underline;">
+                    (Calculate BMI)
+                </a>
+            </label>
+            <select name="bmi_category">
+                <option value="Underweight">Underweight</option>
+                <option value="Normal">Normal</option>
+                <option value="Overweight">Overweight</option>
+                <option value="Obese">Obese</option>
+            </select>
+
+
+            <label>Systolic Blood Pressure (mmHg):</label>
+            <input type="number" name="systolic_bp" min="70" max="200" required>
+
+            <label>Diastolic Blood Pressure (mmHg):</label>
+            <input type="number" name="diastolic_bp" min="40" max="120" required>
+
+            <label>Heart Rate (bpm):</label>
+            <input type="number" name="heart_rate" min="30" max="200" required>
+
+            <label>Daily Steps:</label>
+            <input type="number" name="daily_steps" min="0" required>
+
+            <button type="submit" class="button">Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>

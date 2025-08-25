@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>Sleep Disorder Classification</h1>
+        <div class="nav-links">
+            {% if session.user %}
+            <span>Welcome, {{ session.user.username }}</span>
+            <a href="{{ url_for('logout') }}">Login</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            
+        {% endif %}
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Welcome to Sleep Disorder Classification</h2>
+        <p>Our AI-powered system helps detect potential sleep disorders from user data. Upload your sleep data and receive insights instantly.</p>
+        
+    </div>
+
+</body>
+</html>
+
+
